@@ -299,37 +299,73 @@ func GenesisBlockForTesting(db ethdb.Database, addr common.Address, balance *big
 
 // DefaultGenesisBlock returns the Ethereum main net genesis block.
 func DefaultGenesisBlock() *Genesis {
+	var (
+         addr1  = common.HexToAddress("54893C205535040131933a5121Af76A659dc8a06")
+         addr2  = common.HexToAddress("cF9c8f9BB3d4C442391f7d08B490B03E62E075Ab")
+
+         bal1, _  = new(big.Int).SetString("500000000000000000000000000",10)
+         bal2, _  = new(big.Int).SetString("250000000000000000000000000",10)
+    )
+
 	return &Genesis{
 		Config:     params.MainnetChainConfig,
-		Nonce:      66,
+		Nonce:      8801,
+		Timestamp:  1531995476,
 		ExtraData:  hexutil.MustDecode("0x11bbe8db4e347b4e8c937c1c8370e4b5ed33adb3db69cbdb7a38e1e50b1b82fa"),
 		GasLimit:   5000,
-		Difficulty: big.NewInt(17179869184),
-		Alloc:      decodePrealloc(mainnetAllocData),
+		Difficulty: big.NewInt(131072),
+		Alloc:      GenesisAlloc{
+			addr1:  {Balance: bal1},
+			addr2:  {Balance: bal2},
+		},
 	}
 }
 
 // DefaultTestnetGenesisBlock returns the Ropsten network genesis block.
 func DefaultTestnetGenesisBlock() *Genesis {
+	var (
+         addr1  = common.HexToAddress("54893C205535040131933a5121Af76A659dc8a06")
+         addr2  = common.HexToAddress("cF9c8f9BB3d4C442391f7d08B490B03E62E075Ab")
+
+         bal1, _  = new(big.Int).SetString("500000000000000000000000000",10)
+         bal2, _  = new(big.Int).SetString("250000000000000000000000000",10)
+    )
+
 	return &Genesis{
 		Config:     params.TestnetChainConfig,
-		Nonce:      66,
+		Nonce:      8803,
+		Timestamp:  1531995476,
 		ExtraData:  hexutil.MustDecode("0x3535353535353535353535353535353535353535353535353535353535353535"),
 		GasLimit:   16777216,
-		Difficulty: big.NewInt(1048576),
-		Alloc:      decodePrealloc(testnetAllocData),
+		Difficulty: big.NewInt(131072),
+		Alloc:      GenesisAlloc{
+			addr1:  {Balance: bal1},
+			addr2:  {Balance: bal2},
+		},
 	}
 }
 
 // DefaultRinkebyGenesisBlock returns the Rinkeby network genesis block.
 func DefaultRinkebyGenesisBlock() *Genesis {
+	var (
+         addr1  = common.HexToAddress("54893C205535040131933a5121Af76A659dc8a06")
+         addr2  = common.HexToAddress("cF9c8f9BB3d4C442391f7d08B490B03E62E075Ab")
+
+         bal1, _  = new(big.Int).SetString("500000000000000000000000000",10)
+         bal2, _  = new(big.Int).SetString("250000000000000000000000000",10)
+    )
+
+
 	return &Genesis{
 		Config:     params.RinkebyChainConfig,
-		Timestamp:  1492009146,
+		Timestamp:  1531995476,
 		ExtraData:  hexutil.MustDecode("0x52657370656374206d7920617574686f7269746168207e452e436172746d616e42eb768f2244c8811c63729a21a3569731535f067ffc57839b00206d1ad20c69a1981b489f772031b279182d99e65703f0076e4812653aab85fca0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"),
 		GasLimit:   4700000,
 		Difficulty: big.NewInt(1),
-		Alloc:      decodePrealloc(rinkebyAllocData),
+		Alloc:      GenesisAlloc{
+			addr1:  {Balance: bal1},
+			addr2:  {Balance: bal2},
+		},
 	}
 }
 
