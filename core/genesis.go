@@ -300,12 +300,12 @@ func GenesisBlockForTesting(db ethdb.Database, addr common.Address, balance *big
 // DefaultGenesisBlock returns the Ethereum main net genesis block.
 func DefaultGenesisBlock() *Genesis {
 	var (
-         addr1  = common.HexToAddress("54893C205535040131933a5121Af76A659dc8a06")
-         addr2  = common.HexToAddress("cF9c8f9BB3d4C442391f7d08B490B03E62E075Ab")
-
-         bal1, _  = new(big.Int).SetString("500000000000000000000000000",10)
-         bal2, _  = new(big.Int).SetString("250000000000000000000000000",10)
-    )
+		addr1 = common.HexToAddress("54893C205535040131933a5121Af76A659dc8a06")
+		addr2 = common.HexToAddress("cF9c8f9BB3d4C442391f7d08B490B03E62E075Ab")
+		// balances in Wei:
+		bal1, _ = new(big.Int).SetString("50000000000000000000000", 10) // =50K Ether
+		bal2, _ = new(big.Int).SetString("25000000000000000000000", 10)
+	)
 
 	return &Genesis{
 		Config:     params.MainnetChainConfig,
@@ -324,12 +324,12 @@ func DefaultGenesisBlock() *Genesis {
 // DefaultTestnetGenesisBlock returns the Ropsten network genesis block.
 func DefaultTestnetGenesisBlock() *Genesis {
 	var (
-         addr1  = common.HexToAddress("54893C205535040131933a5121Af76A659dc8a06")
-         addr2  = common.HexToAddress("cF9c8f9BB3d4C442391f7d08B490B03E62E075Ab")
-
-         bal1, _  = new(big.Int).SetString("500000000000000000000000000",10)
-         bal2, _  = new(big.Int).SetString("250000000000000000000000000",10)
-    )
+		addr1 = common.HexToAddress("54893C205535040131933a5121Af76A659dc8a06")
+		addr2 = common.HexToAddress("cF9c8f9BB3d4C442391f7d08B490B03E62E075Ab")
+		// balances in Wei:
+		bal1, _ = new(big.Int).SetString("500000000000000000000000", 10) // =500K Ether
+		bal2, _ = new(big.Int).SetString("250000000000000000000000", 10)
+	)
 
 	return &Genesis{
 		Config:     params.TestnetChainConfig,
@@ -348,13 +348,15 @@ func DefaultTestnetGenesisBlock() *Genesis {
 // DefaultRinkebyGenesisBlock returns the Rinkeby network genesis block.
 func DefaultRinkebyGenesisBlock() *Genesis {
 	var (
-         addr1  = common.HexToAddress("54893C205535040131933a5121Af76A659dc8a06")
-         addr2  = common.HexToAddress("cF9c8f9BB3d4C442391f7d08B490B03E62E075Ab")
+		addr1 = common.HexToAddress("54893C205535040131933a5121Af76A659dc8a06")
+		addr2 = common.HexToAddress("cF9c8f9BB3d4C442391f7d08B490B03E62E075Ab")
 
-         bal1, _  = new(big.Int).SetString("500000000000000000000000000",10)
-         bal2, _  = new(big.Int).SetString("250000000000000000000000000",10)
-    )
-
+		bal1, _ = new(big.Int).SetString("500000000000000000000000000", 10)
+		bal2, _ = new(big.Int).SetString("250000000000000000000000000", 10)
+		// balances in Wei:
+		bal1, _ = new(big.Int).SetString("500000000000000000000000", 10) // =500K Ether
+		bal2, _ = new(big.Int).SetString("250000000000000000000000", 10)
+	)
 
 	return &Genesis{
 		Config:     params.RinkebyChainConfig,
