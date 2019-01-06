@@ -1,0 +1,11 @@
+[Unit]
+Description=Tinkereum Bootnode
+After=network-online.target
+
+[Service]
+Type=simple
+User=%i
+ExecStart=/usr/local/bin/geth --syncmode "full" --mine --minerthreads=1 --etherbase '0x54893C205535040131933a5121Af76A659dc8a06' --ipcdisable
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Tinkereum Bootnode
+After=network-online.target
+
+[Service]
+Type=simple
+User=%i
+ExecStart=/usr/local/bin/geth --syncmode "full" --ipcdisable --maxpeers 900 --nodekey /home/g/boot.key
+
+[Install]
+WantedBy=multi-user.target
