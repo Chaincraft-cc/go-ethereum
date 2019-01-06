@@ -30,7 +30,7 @@ var MainnetBootnodes = []string{
 	// Ethereum Foundation C++ Bootnodes
 	"enode://979b7fa28feeb35a4741660a16076f1943202cb72b6af70d327f053e248bab9ba81760f39d0701ef1d8f89cc1fbd2cacba0710a12cd5314d5e0c9021aa3637f9@5.1.83.226:30303", // DE
 	*/
-	"enode://db77165708b74b7a845ddd44010024ece7839dcf75d939406051565deb35b9a8653a4789782008d8630eb3a214eb05ec102929a6a22a5d545f6dab242a882607@35.198.65.2 :30303", // DE
+	"enode://db77165708b74b7a845ddd44010024ece7839dcf75d939406051565deb35b9a8653a4789782008d8630eb3a214eb05ec102929a6a22a5d545f6dab242a882607@35.198.65.2:30303", // DE
 }
 
 // TestnetBootnodes are the enode URLs of the P2P bootstrap nodes running on the
