@@ -26,10 +26,10 @@ const (
 	MaximumExtraDataSize  uint64 = 32    // Maximum size extra data may be after Genesis.
 	ExpByteGas            uint64 = 10    // Times ceil(log256(exponent)) for the EXP instruction.
 	SloadGas              uint64 = 50    // Multiplied by the number of 32-byte words that are copied (round up) for any *COPY operation and added.
-	CallValueTransferGas  uint64 = 9000  // Paid for CALL when the value transfer is non-zero.
-	CallNewAccountGas     uint64 = 25000 // Paid for CALL when the destination address didn't exist prior.
-	TxGas                 uint64 = 21000 // Per transaction not creating a contract. NOTE: Not payable on data of calls between transactions.
-	TxGasContractCreation uint64 = 53000 // Per transaction that creates a contract. NOTE: Not payable on data of calls between transactions.
+	CallValueTransferGas  uint64 = 4500  // Paid for CALL when the value transfer is non-zero.
+	CallNewAccountGas     uint64 = 12500 // Paid for CALL when the destination address didn't exist prior.
+	TxGas                 uint64 = 10500 // Per transaction not creating a contract. NOTE: Not payable on data of calls between transactions.
+	TxGasContractCreation uint64 = 26500 // Per transaction that creates a contract. NOTE: Not payable on data of calls between transactions.
 	TxDataZeroGas         uint64 = 4     // Per byte of data attached to a transaction that equals zero. NOTE: Not payable on data of calls between transactions.
 	QuadCoeffDiv          uint64 = 512   // Divisor for the quadratic particle of the memory cost equation.
 	LogDataGas            uint64 = 8     // Per byte in a LOG* operation's data.
@@ -53,7 +53,7 @@ const (
 	NetSstoreResetClearRefund uint64 = 19800 // Once per SSTORE operation for resetting to the original zero value
 
 	JumpdestGas      uint64 = 1     // Refunded gas, once per SSTORE operation if the zeroness changes to zero.
-	EpochDuration    uint64 = 30000 // Duration between proof-of-work epochs.
+	EpochDuration    uint64 = 90000 // Duration between proof-of-work epochs.
 	CallGas          uint64 = 40    // Once per CALL operation & message call transaction.
 	CreateDataGas    uint64 = 200   //
 	CallCreateDepth  uint64 = 1024  // Maximum depth of call/create stack.
@@ -63,13 +63,13 @@ const (
 	StackLimit       uint64 = 1024  // Maximum size of VM stack allowed.
 	TierStepGas      uint64 = 0     // Once per operation, for a selection of them.
 	LogTopicGas      uint64 = 375   // Multiplied by the * of the LOG*, per LOG transaction. e.g. LOG0 incurs 0 * c_txLogTopicGas, LOG4 incurs 4 * c_txLogTopicGas.
-	CreateGas        uint64 = 32000 // Once per CREATE operation & contract-creation transaction.
-	Create2Gas       uint64 = 32000 // Once per CREATE2 operation
-	SuicideRefundGas uint64 = 24000 // Refunded following a suicide operation.
+	CreateGas        uint64 = 16000 // Once per CREATE operation & contract-creation transaction.
+	Create2Gas       uint64 = 16000 // Once per CREATE2 operation
+	SuicideRefundGas uint64 = 12000 // Refunded following a suicide operation.
 	MemoryGas        uint64 = 3     // Times the address of the (highest referenced byte in memory + 1). NOTE: referencing happens on read, write and in instructions such as RETURN and CALL.
 	TxDataNonZeroGas uint64 = 68    // Per byte of data attached to a transaction that is not equal to zero. NOTE: Not payable on data of calls between transactions.
 
-	MaxCodeSize = 24576 // Maximum bytecode to permit for a contract
+	MaxCodeSize = 32686 // Maximum bytecode to permit for a contract
 
 	// Precompiled contract gas prices
 
