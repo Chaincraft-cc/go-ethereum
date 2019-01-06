@@ -1,5 +1,5 @@
 [Unit]
-Description=Tinkereum Bootnode
+Description=Tinkereum RPC API Node
 After=network-online.target
 
 [Service]

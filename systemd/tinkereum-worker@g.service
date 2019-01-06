@@ -1,5 +1,5 @@
 [Unit]
-Description=Tinkereum Bootnode
+Description=Tinkereum CPU Worker
 After=network-online.target
 
 [Service]
