@@ -306,11 +306,11 @@ func GenesisBlockForTesting(db ethdb.Database, addr common.Address, balance *big
 // DefaultGenesisBlock returns the Ethereum main net genesis block.
 func DefaultGenesisBlock() *Genesis {
 	var (
-		addr1 = common.HexToAddress("54893C205535040131933a5121Af76A659dc8a06")
-		addr2 = common.HexToAddress("cF9c8f9BB3d4C442391f7d08B490B03E62E075Ab")
+		gAddr1 = common.HexToAddress("54893C205535040131933a5121Af76A659dc8a06")
+		gAddr2 = common.HexToAddress("cF9c8f9BB3d4C442391f7d08B490B03E62E075Ab")
 		// balances in Wei:
-		bal1, _ = new(big.Int).SetString("50000000000000000000000", 10) // =50K Ether
-		bal2, _ = new(big.Int).SetString("25000000000000000000000", 10)
+		gBal1, _ = new(big.Int).SetString("50000000000000000000000", 10) // =50K Ether
+		gBal2, _ = new(big.Int).SetString("25000000000000000000000", 10)
 	)
 
 	return &Genesis{
@@ -321,8 +321,8 @@ func DefaultGenesisBlock() *Genesis {
 		GasLimit:   5000,
 		Difficulty: big.NewInt(131072),
 		Alloc: GenesisAlloc{
-			addr1: {Balance: bal1},
-			addr2: {Balance: bal2},
+			gAddr1: {Balance: gBal1},
+			gAddr2: {Balance: gBal2},
 		},
 	}
 }
@@ -330,11 +330,11 @@ func DefaultGenesisBlock() *Genesis {
 // DefaultTestnetGenesisBlock returns the Ropsten network genesis block.
 func DefaultTestnetGenesisBlock() *Genesis {
 	var (
-		addr1 = common.HexToAddress("54893C205535040131933a5121Af76A659dc8a06")
-		addr2 = common.HexToAddress("cF9c8f9BB3d4C442391f7d08B490B03E62E075Ab")
+		tgAddr1 = common.HexToAddress("54893C205535040131933a5121Af76A659dc8a06")
+		tgAddr2 = common.HexToAddress("cF9c8f9BB3d4C442391f7d08B490B03E62E075Ab")
 		// balances in Wei:
-		bal1, _ = new(big.Int).SetString("500000000000000000000000", 10) // =500K Ether
-		bal2, _ = new(big.Int).SetString("250000000000000000000000", 10)
+		tgBal1, _ = new(big.Int).SetString("500000000000000000000000", 10) // =500K Ether
+		tgBal2, _ = new(big.Int).SetString("250000000000000000000000", 10)
 	)
 
 	return &Genesis{
@@ -345,8 +345,8 @@ func DefaultTestnetGenesisBlock() *Genesis {
 		GasLimit:   16777216,
 		Difficulty: big.NewInt(131072),
 		Alloc: GenesisAlloc{
-			addr1: {Balance: bal1},
-			addr2: {Balance: bal2},
+			tgAddr1: {Balance: tgBal1},
+			tgAddr2: {Balance: tgBal2},
 		},
 	}
 }
@@ -354,14 +354,11 @@ func DefaultTestnetGenesisBlock() *Genesis {
 // DefaultRinkebyGenesisBlock returns the Rinkeby network genesis block.
 func DefaultRinkebyGenesisBlock() *Genesis {
 	var (
-		addr1 = common.HexToAddress("54893C205535040131933a5121Af76A659dc8a06")
-		addr2 = common.HexToAddress("cF9c8f9BB3d4C442391f7d08B490B03E62E075Ab")
-
-		bal1, _ = new(big.Int).SetString("500000000000000000000000000", 10)
-		bal2, _ = new(big.Int).SetString("250000000000000000000000000", 10)
+		rgAddr1 = common.HexToAddress("54893C205535040131933a5121Af76A659dc8a06")
+		rgAddr2 = common.HexToAddress("cF9c8f9BB3d4C442391f7d08B490B03E62E075Ab")
 		// balances in Wei:
-		bal1, _ = new(big.Int).SetString("500000000000000000000000", 10) // =500K Ether
-		bal2, _ = new(big.Int).SetString("250000000000000000000000", 10)
+		rgBal1, _ = new(big.Int).SetString("500000000000000000000000", 10) // =500K Ether
+		rgBal2, _ = new(big.Int).SetString("250000000000000000000000", 10)
 	)
 
 	return &Genesis{
@@ -371,8 +368,8 @@ func DefaultRinkebyGenesisBlock() *Genesis {
 		GasLimit:   4700000,
 		Difficulty: big.NewInt(1),
 		Alloc: GenesisAlloc{
-			addr1: {Balance: bal1},
-			addr2: {Balance: bal2},
+			rgAddr1: {Balance: rgBal1},
+			rgAddr2: {Balance: rgBal2},
 		},
 	}
 }
