@@ -25,9 +25,9 @@ import (
 
 // Genesis hashes to enforce below configs on.
 var (
-	MainnetGenesisHash = common.HexToHash("0xd1a8a8e8613b59f286702e64a73de945395e83b9003f19e238e95443e4f216c9")
-	TestnetGenesisHash = common.HexToHash("0xd423e310eba7af6589a12103e9aeadb0df1ed32feaef3af067b1e4f7009ba53e")
-	RinkebyGenesisHash = common.HexToHash("0x45cb001f7ba2543e2a80afa34c3d3a977f0641e6ab214cc018398d7177bc4ad8")
+	MainnetGenesisHash = common.HexToHash("0x2259f4a718cecf7f7a16218a5ffda89449d23e67652e7b00d9e5ef4d459bc6e3")
+	TestnetGenesisHash = common.HexToHash("0x3000000000000000000000000000000000000000000000000000000000000000")
+	RinkebyGenesisHash = common.HexToHash("0x4000000000000000000000000000000000000000000000000000000000000000")
 )
 
 var (
@@ -37,8 +37,8 @@ var (
 		HomesteadBlock:      big.NewInt(0),
 		DAOForkBlock:        big.NewInt(0),
 		DAOForkSupport:      false,
-		EIP150Block:         big.NewInt(10),
-		EIP150Hash:          common.HexToHash("0x1b04aa1b18b7957f91409602c6e3121cd3a1b70d86503675c5fb305f3c375678"),
+		EIP150Block:         big.NewInt(0),
+		EIP150Hash:          common.HexToHash("0x2259f4a718cecf7f7a16218a5ffda89449d23e67652e7b00d9e5ef4d459bc6e3"),
 		EIP155Block:         big.NewInt(10),
 		EIP158Block:         big.NewInt(10),
 		ByzantiumBlock:      big.NewInt(1700000),
@@ -62,7 +62,7 @@ var (
 		DAOForkBlock:        nil,
 		DAOForkSupport:      false,
 		EIP150Block:         big.NewInt(0),
-		EIP150Hash:          common.HexToHash("0x41941023680923e0fe4d74a34bdac8141f2540e3ae90623718e47d66d1ca4a2d"),
+		EIP150Hash:          common.HexToHash("0x3000000000000000000000000000000000000000000000000000000000000000"),
 		EIP155Block:         big.NewInt(10),
 		EIP158Block:         big.NewInt(10),
 		ByzantiumBlock:      big.NewInt(1700000),
@@ -86,7 +86,7 @@ var (
 		DAOForkBlock:        nil,
 		DAOForkSupport:      false,
 		EIP150Block:         big.NewInt(0),
-		EIP150Hash:          common.HexToHash("0x9b095b36c15eaf13044373aef8ee0bd3a382a5abb92e402afa44b8249c3a90e9"),
+		EIP150Hash:          common.HexToHash("0x4000000000000000000000000000000000000000000000000000000000000000"),
 		EIP155Block:         big.NewInt(3),
 		EIP158Block:         big.NewInt(3),
 		ByzantiumBlock:      big.NewInt(1035301),
