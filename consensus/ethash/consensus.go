@@ -38,9 +38,12 @@ import (
 
 // Ethash proof-of-work protocol constants.
 var (
+	// Hardcap
+	HardCapBlock = big.NewInt(26740000) // after this block, there's no more block reward, resulting in a 42M Hardcap
+
 	FrontierBlockReward       = big.NewInt(5e+18) // Block reward in wei for successfully mining a block
 	ByzantiumBlockReward      = big.NewInt(3e+18) // Block reward in wei for successfully mining a block upward from Byzantium
-	ConstantinopleBlockReward = big.NewInt(2e+18) // Block reward in wei for successfully mining a block upward from Constantinople
+	ConstantinopleBlockReward = big.NewInt(1e+18) // Block reward in wei for successfully mining a block upward from Constantinople
 	maxUncles                 = 1                 // Maximum number of uncles allowed in a single block
 	allowedFutureBlockTime    = 10 * time.Second  // Max time from current time allowed for blocks, before they're considered future blocks
 
@@ -614,6 +617,12 @@ func accumulateRewards(config *params.ChainConfig, state *state.StateDB, header 
 	if config.IsConstantinople(header.Number) {
 		blockReward = ConstantinopleBlockReward
 	}
+
+	// Hardcap
+	if HardCapBlock.Cmp(header.Number) < 0  {
+		blockReward = big.NewInt(0)
+	}
+
 	// Accumulate the rewards for the miner and any included uncles
 	reward := new(big.Int).Set(blockReward)
 	r := new(big.Int)
