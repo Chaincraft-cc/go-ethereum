@@ -379,6 +379,9 @@ func makeDifficultyCalculator(bombDelay *big.Int) func(time uint64, parent *type
 		if x.Cmp(params.MinimumDifficulty) < 0 {
 			x.Set(params.MinimumDifficulty)
 		}
+
+		// Disarmed difficulty bomb
+		/*
 		// calculate a fake block number for the ice-age delay
 		// Specification: https://eips.ethereum.org/EIPS/eip-1234
 		fakeBlockNumber := new(big.Int)
@@ -396,6 +399,8 @@ func makeDifficultyCalculator(bombDelay *big.Int) func(time uint64, parent *type
 			y.Exp(big2, y, nil)
 			x.Add(x, y)
 		}
+		*/
+
 		return x
 	}
 }
@@ -435,6 +440,9 @@ func calcDifficultyHomestead(time uint64, parent *types.Header) *big.Int {
 	if x.Cmp(params.MinimumDifficulty) < 0 {
 		x.Set(params.MinimumDifficulty)
 	}
+
+	// Disarmed difficulty bomb
+	/*
 	// for the exponential factor
 	periodCount := new(big.Int).Add(parent.Number, big1)
 	periodCount.Div(periodCount, expDiffPeriod)
@@ -446,6 +454,8 @@ func calcDifficultyHomestead(time uint64, parent *types.Header) *big.Int {
 		y.Exp(big2, y, nil)
 		x.Add(x, y)
 	}
+	*/
+
 	return x
 }
 
